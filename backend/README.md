@@ -37,7 +37,7 @@ curl -X POST http://localhost:8000/voice \
 1. Crie um **Web Service** apontando para este repositório.
 2. **Root Directory**: `backend`
 3. **Build Command**: `pip install -r requirements.txt`
-4. **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. **Start Command**: `python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
 5. Defina as variáveis de ambiente `ANTHROPIC_API_KEY` e `AGENT_API_KEY` no dashboard.
 
 Há também um `render.yaml` na raiz do repo como blueprint inicial — confira os campos no dashboard do Render, já que o formato do blueprint pode mudar.
