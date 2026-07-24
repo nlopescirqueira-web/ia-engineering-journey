@@ -37,7 +37,8 @@ curl -X POST http://localhost:8000/voice \
 1. Crie um **Web Service** apontando para este repositório.
 2. **Root Directory**: `backend`
 3. **Build Command**: `pip install -r requirements.txt`
-4. **Start Command**: `python3 -m uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. **Start Command**: `/opt/render/project/src/.venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
+   (o Render costuma deixar o PATH da instância em execução sem o virtualenv do build; apontar direto para o Python de dentro do `.venv` evita o erro "No module named uvicorn"/"command not found".)
 5. Defina as variáveis de ambiente `ANTHROPIC_API_KEY` e `AGENT_API_KEY` no dashboard.
 
 Há também um `render.yaml` na raiz do repo como blueprint inicial — confira os campos no dashboard do Render, já que o formato do blueprint pode mudar.
